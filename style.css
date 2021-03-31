@@ -1,10 +1,99 @@
-:root {
-   --darkgray: #212329;
+/* sets up entire page and allows use of grids */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* navbar container/background */
+.nav-container {
+  width: 100%;
+  background-color: darkgray;
 }
 
+.navbar {
+  display: grid;
+  grid-template-columns: 0.2fr auto 1fr;
+  align-items: center;
+  height: 80px;
+  width: 90%;
+  max-width: 1720px;
+  margin: 0 auto;
+}
 
-* {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
+/* logo css (maybe add image later) */
+#navbar-logo {
+  color: white;
+  justify-self: start;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+/* basic navbar items (home, inventory, etc) */
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  list-style: none;
+  text-align: center;
+  width: 70%;
+  justify-self: end;
+}
+
+.nav-links {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links:hover {
+  color: red;
+  transition: all 0.2s ease-out;
+}
+
+/* hamburger menu for mobile screens */
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background: white;
+}
+
+/* mobile screen view */
+@media screen and (max-width: 768px) {
+  .nav-container {
+    position: relative;
+  }
+  .nav-menu {
+    display: grid;
+    grid-template-columns: auto;
+    background: red;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+
+  #navbar-logo {
+    margin-left: 20px;
+  }
+
+  .nav-menu.active {
+    background: darkgray;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+  .nav-links {
+    text-align: center;
+    line-height: 60px;
+    width: 100%;
+    display: table;
+  }
+  .nav-links:hover {
+    background: red;
+    color: white;
+    transition: all 0.4s ease-out;
+  }
 }
