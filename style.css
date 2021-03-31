@@ -62,6 +62,8 @@
   .nav-container {
     position: relative;
   }
+
+  /* hides nav menu */
   .nav-menu {
     display: grid;
     grid-template-columns: auto;
@@ -79,6 +81,7 @@
     margin-left: 20px;
   }
 
+  /* shows nav menu */
   .nav-menu.active {
     background: darkgray;
     left: 0;
@@ -96,4 +99,33 @@
     color: white;
     transition: all 0.4s ease-out;
   }
+  .navbar {
+     width: 100%
+  }
+  #mobile-menu {
+     position: absolute;
+     top: 20%;
+     right: 5%;
+     transform: translate(5%, 20%);
+  }
+  .menu-toggle .bar {
+     display: block;
+     cursor: pointer;
+  }
+
+  .menu-toggle:hover {
+     cursor: pointer
+  }
+
+  /* changes hamburger into an X */
+  #mobile-menu.is-active .bar:nth-child(2) {
+     opacity: 0;
+  }
+  #mobile-menu.is-active .bar:nth-child(1) {
+   transform: translateY(8px) rotate(45deg);
+   }
+
+   #mobile-menu.is-active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+   }
 }
