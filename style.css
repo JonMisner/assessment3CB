@@ -96,6 +96,7 @@ nav ul li {
 
  #inventory-menu li a:hover{
    background-color: #00458e;
+   color: white;
 
  }
 /* toggles dropdown memnu*/
