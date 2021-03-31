@@ -8,10 +8,10 @@
     <title>Navbar Assessment</title>
   </head>
   <body>
-     <!-- basic navbar container -->
+    <!-- basic navbar container -->
     <div class="nav-container">
       <nav class="navbar">
-        <h1 id="navbar-logo">Caddy Logo</h1>
+        <img src="./cadillacLogo.png" alt="Caddy Logo" id="logo" />
         <!-- hamburger menu for mobile screens -->
         <div class="menu-toggle" id="mobile-menu">
           <span class="bar"></span>
@@ -20,23 +20,36 @@
         </div>
         <!-- full screen menu -->
         <ul class="nav-menu">
+          <li><a href="#" class="nav-links">Home</a></li>
           <li>
-            <a href="" class="nav-links">Home</a>
+            <a href="#" class="nav-links" id="inventory-toggle">Inventory</a>
+            <!-- dropdown menu -->
+            <ul class="nav-menu" id="inventory-menu">
+              <li>
+                <a href="#" class="nav-links inventory-links">New</a>
+              </li>
+              <li>
+                <a href="#" class="nav-links inventory-links">Used</a>
+              </li>
+              <li>
+                <a href="#" class="nav-links inventory-links">Cars</a>
+              </li>
+              <li>
+                <a href="#" class="nav-links inventory-links">Trucks</a>
+              </li>
+              <li>
+                <a href="#" class="nav-links inventory-links">SUVs</a>
+              </li>
+            </ul>
           </li>
-          <li>
-            <a href="" class="nav-links">Inventory</a>
-          </li>
-          <li>
-            <a href="" class="nav-links">About Us</a>
-          </li>
-          <li>
-            <a href="" class="nav-links">Contact</a>
-          </li>
+          <li><a href="#" class="nav-links" id="about">About Us</a></li>
+          <li><a href="#" class="nav-links" id="contact">Contact</a></li>
         </ul>
       </nav>
     </div>
+
     <!-- main paige content -->
-    <h1>Navbar Website</h1>
+    <!-- <h1>Navbar Website</h1> -->
 
     <!-- linked apps.js -->
     <script src="./app.js"></script>

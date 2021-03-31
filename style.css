@@ -4,10 +4,24 @@
   margin: 0;
   padding: 0;
 }
+
+body {
+   background-image: url(./cadillacBackground.jpeg);
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+#logo {
+   height: 70px;
+   width: 70px;
+   margin-left: 3px;
+   /* justify-self: start; */
+}
+
 /* navbar container/background */
 .nav-container {
   width: 100%;
-  background-color: darkgray;
+  background-color: white;
 }
 
 .navbar {
@@ -21,12 +35,12 @@
 }
 
 /* logo css (maybe add image later) */
-#navbar-logo {
+/* #navbar-logo {
   color: white;
   justify-self: start;
   margin-left: 20px;
   cursor: pointer;
-}
+} */
 
 /* basic navbar items (home, inventory, etc) */
 .nav-menu {
@@ -36,15 +50,17 @@
   text-align: center;
   width: 70%;
   justify-self: end;
+  float: left;
+  position: relative;
 }
 
 .nav-links {
-  color: white;
+  color: #36454f;
   text-decoration: none;
 }
 
 .nav-links:hover {
-  color: red;
+  color: #6e0a1e;
   transition: all 0.2s ease-out;
 }
 
@@ -54,8 +70,52 @@
   height: 3px;
   margin: 5px auto;
   transition: all 0.3s ease-in-out;
-  background: white;
+  background: #36454f;
 }
+
+nav ul li a {
+   display: block;
+   
+
+}
+nav ul li {
+   float: left;
+   list-style: none;
+   position: relative;
+
+}
+
+ #inventory-menu li {
+   width: 100%;
+   
+ }
+
+ #inventory-menu li a{
+   padding: 8px 10px;
+ }
+
+ #inventory-menu li a:hover{
+   background-color: #00458e;
+
+ }
+/* toggles dropdown memnu*/
+#inventory-menu {
+   display: none;
+   position: absolute;
+   background-color: white;
+   padding: 10px;
+   width: 100px;
+   border-radius: 0 0 10px 10px;
+ }
+
+ #inventory-menu.inv-active {
+   display: block;
+   background: white;
+   color: #36454f;
+   left: 0;
+   opacity: 1;
+   transition: all 0.5s ease;
+ }
 
 /* mobile screen view */
 @media screen and (max-width: 768px) {
@@ -67,7 +127,7 @@
   .nav-menu {
     display: grid;
     grid-template-columns: auto;
-    background: red;
+    background: #6e0a1e;
     margin: 0;
     width: 100%;
     position: absolute;
@@ -83,7 +143,7 @@
 
   /* shows nav menu */
   .nav-menu.active {
-    background: darkgray;
+    background: #36454f;
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
@@ -93,9 +153,10 @@
     line-height: 60px;
     width: 100%;
     display: table;
+    color: white;
   }
   .nav-links:hover {
-    background: red;
+    background: #6e0a1e;
     color: white;
     transition: all 0.4s ease-out;
   }
@@ -128,4 +189,29 @@
    #mobile-menu.is-active .bar:nth-child(3) {
       transform: translateY(-8px) rotate(-45deg);
    }
+ 
+   /* toggles inventory dropdown on small screen */
+    #inventory-menu {
+      display: grid;
+      grid-template-columns: auto;
+      background: #6e0a1e;
+      margin: 0;
+      width: 100%;
+      position: absolute;
+      top: 80px;
+      left: -100%;
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+   
+    #inventory-menu.inv-active {
+      background: #36454f;
+      left: 0;
+      opacity: 1;
+      transition: all 0.5s ease;
+      margin-top: 100px;
+    }
+    .clearfix {
+      overflow: auto;
+    }
 }
